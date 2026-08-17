@@ -263,7 +263,7 @@ For SEMICON India Hackathon 2026 submission. See competition rules.
 
 ## Contact
 
-Team: [TEAM NAME — TO BE PROVIDED]
-Members: [NAMES — TO BE PROVIDED]
-College: [COLLEGE — TO BE PROVIDED]
-Email: [CONTACT — TO BE PROVIDED]
+Team: KLA 
+Members: Rudra Patel, Parth Shah 
+College: SAL Collage
+Email: rudra0425742@gmail.com
