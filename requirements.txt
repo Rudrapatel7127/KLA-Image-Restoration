@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------------------
+# KLA PS01 - image restoration (SR-UNet)
+# Runtime + evaluation + training dependencies.
+#
+# NOTE on PyTorch:
+#   torch/torchvision are NOT pinned to a single wheel here because the CPU
+#   and CUDA builds are mutually exclusive. Install the build you need FIRST
+#   (see README "Environment setup", step 2), then run `pip install -r
+#   requirements.txt`; pip will keep your existing torch build.
+#
+#   Local dev environment used: torch 2.13.0+cpu / torchvision 0.28.0 (CPU).
+#   The checkpoint was trained with torch 2.5.1 on CUDA (RTX 2000 Ada) and
+#   loads fine on either build.
+# ---------------------------------------------------------------------------
+
+# --- Core numerics ----------------------------------------------------------
+numpy==2.5.1
+torch>=2.5
+
+# --- Evaluation (PSNR / SSIM / LPIPS) --------------------------------------
+# LPIPS: perceptual metric; downloads AlexNet weights on first run.
+lpips==0.1.4
+
+# --- Training ---------------------------------------------------------------
+tqdm==4.70.0
+
+# --- REST API (backend/main.py, port 8000) ---------------------------------
+fastapi==0.141.1
+uvicorn==0.52.1
+python-multipart==0.0.32
+pydantic==2.13.4
+
+# --- PS02 localization track (separate pipeline, port 8001) ----------------
+# Required only if you also run the Applied Materials track:
+#   backend/localization_api.py  (OpenCV image decode / matchTemplate)
+# opencv-python>=4.8
